@@ -1,0 +1,20 @@
+<div id="app">
+    <textarea id="area"> </textarea>
+    <p>You have written <b id="wordBold">0 words</b> and <b id="characterBold">0 characters </b></p>
+</div>
+
+<script>
+
+    let areaHandle = document.getElementById('area');
+    let wordBoldHandle = document.getElementById('wordBold');
+    let charBoldHandle = document.getElementById('characterBold');
+    
+
+    areaHandle.addEventListener('keypress',function(){
+        let wordNumber = areaHandle.value.split(' ').length;
+        console.log(wordNumber);
+        wordBoldHandle.innerHTML = `${wordNumber} words`;
+        charBoldHandle.innerHTML = `${areaHandle.value.length} characters`;
+    },false);
+
+</script>
